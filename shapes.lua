@@ -3,15 +3,15 @@ shapes = {}
 shapes.newHexagon = function( xx, yy, side, fillC, strokeC )
     
     local vert1x = xx - ( side / 2 )
-    local vert1y = yy + ( math.sin(60) * side )
+    local vert1y = yy + ( math.cos(60) * side )
     local vert2x = xx + ( side / 2 )
-    local vert2y = yy + ( math.sin(60) * side )
+    local vert2y = yy + ( math.cos(60) * side )
     local vert3x = xx + side
     local vert3y = yy
     local vert4x = xx + ( side / 2 )
-    local vert4y = yy - ( math.sin(60) * side )
+    local vert4y = yy - ( math.cos(60) * side )
     local vert5x = xx - ( side / 2 )
-    local vert5y = yy - ( math.sin(60) * side )
+    local vert5y = yy - ( math.cos(60) * side )
     local vert6x = xx - side 
     local vert6y = yy
     
