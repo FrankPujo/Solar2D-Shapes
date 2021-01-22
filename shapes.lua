@@ -1,5 +1,6 @@
 shapes = {}
 
+-- hexagon
 shapes.newHexagon = function( xx, yy, side, fillC, strokeC )
     
     local vert1x = xx - ( side / 2 )
@@ -24,6 +25,7 @@ shapes.newHexagon = function( xx, yy, side, fillC, strokeC )
     return shape
 end
 
+-- hocatgon
 shapes.newHoctagon = function( xx, yy, side, fillC, strokeC )
     
     local vert1x = xx - ( side / 2 )
@@ -50,6 +52,62 @@ shapes.newHoctagon = function( xx, yy, side, fillC, strokeC )
     shape:setStrokeColor( strokeC )
     
     return shape
+end
+
+-- equilateral triangle
+shapes.newEqTriangle( xx, yy, side )
+    
+    local vert1x = xx - ( side / 2 )
+    local vert1y = yy + ( math.sqrt(3) / 6 * side )
+    local vert2x = xx + ( side / 2 )
+    local vert2y = yy + ( math.sqrt(3) / 6 * side )
+    local vert3x = xx
+    local vert3y = yy - ( math.sqrt(3) / 3 * side )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+-- isosceles triangle
+shapes.newIsTriangle( xx, yy, base, height )
+    
+    local vert1x = xx - ( base / 2 )
+    local vert1y = yy + ( height / 3 )
+    local vert2x = xx + ( base / 2 )
+    local vert2y = yy + ( height / 3 )
+    local vert3x = xx
+    local vert3y = yy - ( height / 3 * 2 )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+-- right triangle
+shapes.newRiTriangle( xx, yy, base, height )
+    
+    local vert1x = xx - ( base / 3 )
+    local vert1y = yy + ( height / 3 )
+    local vert2x = xx + ( base / 3 * 2 )
+    local vert2y = yy + ( height / 3 )
+    local vert3x = xx - ( base / 3 )
+    local vert3y = yy - ( height / 3 * 2 )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+-- pentagon
+shapes.newPentagon()
+    
 end
 
 return shapes
