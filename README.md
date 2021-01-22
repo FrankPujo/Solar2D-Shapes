@@ -8,3 +8,9 @@ Available function (and arguments in order):
   * side = side length
   * fillC = fill colour
   * strokec = stroke colour
+* newHoctagon() to create hoctagons; arguments
+  * xx = x position
+  * yy = y position
+  * side = side length
+  * fillC = fill colour
+  * strokec = stroke colour
