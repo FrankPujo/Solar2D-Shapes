@@ -19,9 +19,10 @@ Available function (and arguments in order):
 * newRightTriangle() to create a triangle with a right angle; arguments:
   * base = base lenght
   * height = height lenght
+* newPentagon() to create a pen
 ---
 Current bugs, gotchas and lacks:  
 * There is no way to change the color, the stroke or any other customization of the shapes;
 * The right triangle can only have a bottom-right oriented 90° angle;
-* The hoctagon bugs along with the changing of the coordinates;
+* shapes.newPentagon() doesn't work properly;
 * The triangle have un-intuitive names.
