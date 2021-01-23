@@ -19,7 +19,8 @@ Available function (and arguments in order):
 * newRightTriangle() to create a triangle with a right angle; arguments:
   * base = base lenght
   * height = height lenght
-* newPentagon() to create a pen
+* newPentagon() to create a regular pentagon; arguments:
+  * side = side lenght
 ---
 Current bugs, gotchas and lacks:  
 * There is no way to change the color, the stroke or any other customization of the shapes;
