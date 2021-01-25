@@ -1,4 +1,5 @@
 shapes = {}
+shapes.newTriangle = {}
 
 -- hexagon
 shapes.newHexagon = function( xx, yy, side )
@@ -51,7 +52,7 @@ shapes.newHoctagon = function( xx, yy, side )
 end
 
 -- equilateral triangle
-shapes.newEqTriangle = function( xx, yy, side )
+shapes.newTriangle.equi = function( xx, yy, side )
     
     local vert1x = xx - ( side / 2 )
     local vert1y = yy + ( math.sqrt(3) / 6 * side )
@@ -68,7 +69,7 @@ shapes.newEqTriangle = function( xx, yy, side )
 end
 
 -- isosceles triangle
-shapes.newIsTriangle = function( xx, yy, base, height )
+shapes.newTriangle.isos = function( xx, yy, base, height )
     
     local vert1x = xx - ( base / 2 )
     local vert1y = yy + ( height / 3 )
@@ -85,7 +86,7 @@ shapes.newIsTriangle = function( xx, yy, base, height )
 end
 
 -- right triangle
-shapes.newRiTriangle = function( xx, yy, base, height )
+shapes.newTriangle.right = function( xx, yy, base, height )
     
     local vert1x = xx - ( base / 3 )
     local vert1y = yy + ( height / 3 )
@@ -104,13 +105,13 @@ end
 -- pentagon
 shapes.newPentagon = function( xx, yy, side )
     
-    local inR = side * 0.68819
-    local outR = side * 0.85065
+    local inR = side * 0.688
+    local outR = side * 0.851
     
     local vert1x = xx - ( side / 2 )
-    local vert1y = yy + inR
+    local vert1y = yy + ( math.cos(36) * inR )
     local vert2x = xx + ( side / 2 )
-    local vert2y = yy + inR
+    local vert2y = yy + ( math.cos(36) * inR )
     local vert3x = xx + ( math.cos(18) * outR )
     local vert3y = yy - ( math.sin(18) * outR )
     local vert4x = xx  
