@@ -1,38 +1,37 @@
 # Solar2D-Shapes
 
 ### Slim library for shapes in Solar2d Game Engine 
----  
-Shapes  
+---   
 ```
-
-|
-|——— regular
-|      |
-|      |——— hoctagon
-|      |——— hexagon
-|      |——— pentagon
-|
-|——— triangles
-|      |
-|      |——— equi
-|      |——— isosc
-|      |——— right
-|             |
-|             |——— bR
-|             |——— bL
-|             |——— tR
-|             |——— tL
-|
-|——— stars
-|      |
-|      |——— four
-|
-|——— arrows
-|      |
-|      |——— left
-|      |——— right
-|      |——— top
-|      |——— bottom
+Shapes
+  |
+  |——— regular
+  |      |
+  |      |——— hoctagon
+  |      |——— hexagon
+  |      |——— pentagon
+  |
+  |——— triangles
+  |      |
+  |      |——— equi
+  |      |——— isosc
+  |      |——— right
+  |             |
+  |             |——— bR
+  |             |——— bL
+  |             |——— tR
+  |             |——— tL
+  |
+  |——— stars
+  |      |
+  |      |——— four
+  |
+  |——— arrows
+  |      |
+  |      |——— left
+  |      |——— right
+  |      |——— top
+  |      |——— bottom 
 ```
 ---
 Current bugs, gotchas and lacks:  
