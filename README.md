@@ -31,12 +31,10 @@ Shapes
   |      |——— left
   |      |——— right
   |      |——— top
-  |      |——— bottom 
+  |      |——— down
 ```
 ---
 Current bugs, gotchas and lacks:  
 * There is no way to change the color, the stroke or any other customization of the shapes;
 * The right triangle can only have a bottom-right oriented 90° angle;
 * shapes.newPentagon() doesn't work properly;
-* The triangle have un-intuitive names.
-
