@@ -35,6 +35,6 @@ Shapes
 ```
 ---
 Current bugs, gotchas and lacks:  
-* There is no way to change the color, the stroke or any other customization of the shapes;
-* The right triangle can only have a bottom-right oriented 90° angle;
-* shapes.newPentagon() doesn't work properly;
+* there is no way to change the color, the stroke or any other customization of the shapes;
+* shapes.triangle.triangle currently is a function itself and has a bottom-right oriented 90° angle instead of being a table containing 4 functions;
+* shapes.regular.pentagon() doesn't work properly;
