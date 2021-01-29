@@ -1,6 +1,6 @@
 shapes = {}
 shapes.triangle = {}
---shapes.triangle.right = {}
+shapes.triangle.right = {}
 shapes.regular = {}
 shapes.arrow = {}
 shapes.stars = {}
@@ -89,8 +89,26 @@ shapes.triangle.isos = function( xx, yy, base, height )
     return shape
 end
 
----- right triangle ----
-shapes.triangle.right = function( xx, yy, base, height )
+---- right triangle in bottom right ----
+shapes.triangle.right.bR = function( xx, yy, base, height )
+    
+    local vert1x = xx + ( base / 3 )
+    local vert1y = yy + ( height / 3 )
+    local vert2x = xx - ( base / 3 * 2 )
+    local vert2y = yy + ( height / 3 )
+    local vert3x = xx + ( base / 3 )
+    local vert3y = yy - ( height / 3 * 2 )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+
+---- right triangle in bottom left ----
+shapes.triangle.right.bL = function( xx, yy, base, height )
     
     local vert1x = xx - ( base / 3 )
     local vert1y = yy + ( height / 3 )
@@ -98,6 +116,40 @@ shapes.triangle.right = function( xx, yy, base, height )
     local vert2y = yy + ( height / 3 )
     local vert3x = xx - ( base / 3 )
     local vert3y = yy - ( height / 3 * 2 )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+---- right triangle in top right ----
+shapes.triangle.right.tR = function( xx, yy, base, height )
+    
+    local vert1x = xx + ( base / 3 )
+    local vert1y = yy - ( height / 3 )
+    local vert2x = xx - ( base / 3 * 2 )
+    local vert2y = yy - ( height / 3 )
+    local vert3x = xx + ( base / 3 )
+    local vert3y = yy + ( height / 3 * 2 )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
+    
+    local shape = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+---- right triangle in top left ----
+shapes.triangle.right.tL = function( xx, yy, base, height )
+    
+    local vert1x = xx - ( base / 3 )
+    local vert1y = yy - ( height / 3 )
+    local vert2x = xx + ( base / 3 * 2 )
+    local vert2y = yy - ( height / 3 )
+    local vert3x = xx - ( base / 3 )
+    local vert3y = yy + ( height / 3 * 2 )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y }
     
@@ -116,12 +168,12 @@ shapes.regular.pentagon = function( xx, yy, side )
     local vert1y = yy + inR
     local vert2x = xx + ( side / 2 )
     local vert2y = yy + inR
-    local vert3x = xx + ( math.cos(18) + outR )
-    local vert3y = yy - ( math.sin(18) + outR )
+    local vert3x = xx + ( math.cos(18) * outR )
+    local vert3y = yy - ( math.sin(18) * outR )
     local vert4x = xx  
     local vert4y = yy - outR
-    local vert5x = xx - ( math.cos(18) + outR )
-    local vert5y = yy - ( math.sin(18) + outR )
+    local vert5x = xx - ( math.cos(18) * outR )
+    local vert5y = yy - ( math.sin(18) * outR )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y }
     

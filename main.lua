@@ -1,9 +1,12 @@
 local shapes = require( "shapes" )
 
-local right = shapes.triangle.right( 50, 20, 60, 40 )
+local rightBR = shapes.triangle.right.bR( 50, 230, 60, 40 )
+local rightTR = shapes.triangle.right.tR( 120, 230, 60, 40 )
+local rightTL = shapes.triangle.right.tL( 190, 230, 60, 40 )
 local isosc = shapes.triangle.isos( 120, 20, 40, 60 )
 local equil = shapes.triangle.equi( 190, 20, 50 )
 local hexag = shapes.regular.hexagon( 260, 20, 25 )
+local rightBL = shapes.triangle.right.bL( 260, 230, 60, 40 )
 local hocta = shapes.regular.hoctagon( 120, 90, 20 )
 local right = shapes.arrow.right( 190, 90, 10, 30, 30, 40 )
 local right = shapes.arrow.left( 50, 160, 10, 30, 30, 40 )
