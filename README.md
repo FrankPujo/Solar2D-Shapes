@@ -32,6 +32,8 @@ Shapes
   |      |——— right
   |      |——— top
   |      |——— down
+  |
+  |——— ellipse
 ```
 ---
 Features, bugs and other:  
