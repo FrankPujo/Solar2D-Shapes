@@ -164,16 +164,16 @@ shapes.regular.pentagon = function( xx, yy, side )
     local inR = side * 0.688
     local outR = side * 0.851
     
-    local vert1x = xx - ( side / 2 )
-    local vert1y = yy + inR
-    local vert2x = xx + ( side / 2 )
-    local vert2y = yy + inR
-    local vert3x = xx + ( math.cos(18) * outR )
-    local vert3y = yy - ( math.sin(18) * outR )
-    local vert4x = xx  
-    local vert4y = yy - outR
-    local vert5x = xx - ( math.cos(18) * outR )
-    local vert5y = yy - ( math.sin(18) * outR )
+    local vert1x = - ( side / 2 )
+    local vert1y = inR
+    local vert2x = ( side / 2 )
+    local vert2y = inR
+    local vert3x = ( math.cos(18) * outR )
+    local vert3y = - ( math.sin(18) * outR )
+    local vert4x = 0 
+    local vert4y = - outR
+    local vert5x = - ( math.cos(18) * outR )
+    local vert5y = - ( math.sin(18) * outR )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y }
     
@@ -204,6 +204,7 @@ shapes.arrow.right = function( xx, yy, tWidth, tLenght, pWidth, pLenght )
     
     local shape = display.newPolygon( xx, yy, vertices )
     
+    return shape
 end
 
 ---- left arrow ----
@@ -228,6 +229,7 @@ shapes.arrow.left = function( xx, yy, tWidth, tLenght, pWidth, pLenght )
     
     local shape = display.newPolygon( xx, yy, vertices )
     
+    return shape
 end
 
 ---- up arrow ----
@@ -252,6 +254,7 @@ shapes.arrow.up = function( xx, yy, tWidth, tLenght, pWidth, pLenght )
     
     local shape = display.newPolygon( xx, yy, vertices )
     
+    return shape
 end
 
 ---- down arrow ----
@@ -276,6 +279,43 @@ shapes.arrow.down = function( xx, yy, tWidth, tLenght, pWidth, pLenght )
     
     local shape = display.newPolygon( xx, yy, vertices )
     
+    return shape
 end
+
+---- four points star ----
+shapes.stars.four = function( xx, yy, ray, thick )
     
+    local thInd = thick / 10
+    
+    local vert1x = xx
+    local vert1y = yy - ray
+    local vert2x = xx + ( math.cos(45) * ray * thInd )
+    local vert2y = yy - ( math.cos(45) * ray * thInd )
+    local vert3x = xx + ray
+    local vert3y = yy
+    local vert4x = xx + ( math.cos(45) * ray * thInd )
+    local vert4y = yy - ( math.cos(45) * ray * thInd )
+    local vert5x = xx
+    local vert5y = yy - ray
+    local vert6x = xx - ( math.cos(45) * ray * thInd )
+    local vert6y = yy - ( math.cos(45) * ray * thInd )
+    local vert7x = xx - ray
+    local vert7y = yy
+    local vert8x = xx - ( math.cos(45) * ray * thInd )
+    local vert8y = yy + ( math.cos(45) * ray * thInd )
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y, vert6x, vert6y, vert7x, vert7y, vert8x, vert8y }
+    
+    local shapes = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+shapes.ellipse = function( xx, yy, width, height )
+    local shape = display.newCircle( xx, yy, 100 )
+    shape:scale( width, height )
+    
+    return shape
+end
+
 return shapes
