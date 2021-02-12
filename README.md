@@ -4,6 +4,7 @@
 This library provide an easier and faster access to all the functionalities of the display. library in Solar2D.  
 All the functions in this library create shapes through some display functions, so the objects returned can be treated like actual display objcets, because THEY ARE.  
 This means you can: add a stroke, customize colors, etc. (full documentation [here](https://docs.coronalabs.com/guide/media/displayObjects/index.html))
+
 ---   
 ## Functions tree
 ```
