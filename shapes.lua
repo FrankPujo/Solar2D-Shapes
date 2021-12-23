@@ -161,19 +161,20 @@ end
 ---- pentagon ----
 shapes.regular.pentagon = function( xx, yy, side )
     
-    local inR = side * 0.688
-    local outR = side * 0.851
+    local s = side
+    local a = s * 0.688
+    local r = s * 0.851
     
-    local vert1x = - ( side / 2 )
-    local vert1y = inR
-    local vert2x = ( side / 2 )
-    local vert2y = inR
-    local vert3x = ( math.cos(18) * outR )
-    local vert3y = - ( math.sin(18) * outR )
-    local vert4x = 0 
-    local vert4y = - outR
-    local vert5x = - ( math.cos(18) * outR )
-    local vert5y = - ( math.sin(18) * outR )
+    local vert1x = xx - ( s / 2 )
+    local vert1y = yy + a
+    local vert2x = xx + ( s / 2 )
+    local vert2y = yy + a
+    local vert3x = xx + ( math.cos( math.rad(18) ) * r )
+    local vert3y = yy - ( math.sin( math.rad(18) ) * r )
+    local vert4x = xx
+    local vert4y = yy - r
+    local vert5x = xx - ( math.cos( math.rad(18) ) * r )
+    local vert5y = yy - ( math.sin( math.rad(18) ) * r )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y }
     
