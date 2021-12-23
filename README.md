@@ -43,7 +43,6 @@ Shapes
 ---
 ## Features, bugs and other:
 * the shapes behave like a proper display.* object so they are fully customizable with colour, stroke and fillings;
-* shapes.regular.pentagon() doesn't work properly;
 ---
 ## Parameters
 The first two parameters for every function are the x and y position.  
