@@ -9,15 +9,15 @@ shapes.stars = {}
 shapes.regular.hexagon = function( xx, yy, side )
     
     local vert1x = xx - ( side / 2 )
-    local vert1y = yy + ( math.cos(60) * side )
+    local vert1y = yy - ( side * math.sin(math.pi/3) )
     local vert2x = xx + ( side / 2 )
-    local vert2y = yy + ( math.cos(60) * side )
+    local vert2y = yy - ( side * math.sin(math.pi/3) )
     local vert3x = xx + side
     local vert3y = yy
     local vert4x = xx + ( side / 2 )
-    local vert4y = yy - ( math.cos(60) * side )
+    local vert4y = yy + ( side * math.sin(math.pi/3) )
     local vert5x = xx - ( side / 2 )
-    local vert5y = yy - ( math.cos(60) * side )
+    local vert5y = yy + ( side * math.sin(math.pi/3) )
     local vert6x = xx - side 
     local vert6y = yy
     
@@ -32,20 +32,20 @@ end
 shapes.regular.hoctagon = function( xx, yy, side )
     
     local vert1x = xx - ( side / 2 )
-    local vert1y = yy - ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert1y = yy - ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert2x = xx + ( side / 2 )
-    local vert2y = yy - ( ( side / 2 ) + ( math.cos(45) * side ) )
-    local vert3x = xx + ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert2y = yy - ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
+    local vert3x = xx + ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert3y = yy - ( side / 2 )
-    local vert4x = xx + ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert4x = xx + ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert4y = yy + ( side / 2 )
     local vert5x = xx + ( side / 2 )
-    local vert5y = yy + ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert5y = yy + ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert6x = xx - ( side / 2 ) 
-    local vert6y = yy + ( ( side / 2 ) + ( math.cos(45) * side ) )
-    local vert7x = xx - ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert6y = yy + ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
+    local vert7x = xx - ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert7y = yy + ( side / 2 )
-    local vert8x = xx - ( ( side / 2 ) + ( math.cos(45) * side ) )
+    local vert8x = xx - ( ( side / 2 ) + ( math.cos(math.pi/4) * side ) )
     local vert8y = yy - ( side / 2 )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y, vert6x, vert6y, vert7x, vert7y, vert8x, vert8y }
@@ -162,19 +162,19 @@ end
 shapes.regular.pentagon = function( xx, yy, side )
     
     local s = side
-    local a = s * 0.688
-    local r = s * 0.851
+    local a = s * 0.6882
+    local r = s * 0.8507
     
     local vert1x = xx - ( s / 2 )
     local vert1y = yy + a
     local vert2x = xx + ( s / 2 )
     local vert2y = yy + a
-    local vert3x = xx + ( math.cos( math.rad(18) ) * r )
-    local vert3y = yy - ( math.sin( math.rad(18) ) * r )
+    local vert3x = xx + ( math.cos( math.pi/10 ) * r )
+    local vert3y = yy - ( math.sin( math.pi/10 ) * r )
     local vert4x = xx
     local vert4y = yy - r
-    local vert5x = xx - ( math.cos( math.rad(18) ) * r )
-    local vert5y = yy - ( math.sin( math.rad(18) ) * r )
+    local vert5x = xx - ( math.cos( math.pi/10 ) * r )
+    local vert5y = yy - ( math.sin( math.pi/10 ) * r )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y }
     
@@ -287,25 +287,59 @@ end
 shapes.stars.four = function( xx, yy, ray, thick )
     
     local thInd = thick / 10
+	local smRay = ray * thInd
     
     local vert1x = xx
     local vert1y = yy - ray
-    local vert2x = xx + ( math.cos(45) * ray * thInd )
-    local vert2y = yy - ( math.cos(45) * ray * thInd )
+    local vert2x = xx + ( math.cos(math.pi/4) * smRay )
+    local vert2y = yy - ( math.cos(math.pi/4) * smRay )
     local vert3x = xx + ray
     local vert3y = yy
-    local vert4x = xx + ( math.cos(45) * ray * thInd )
-    local vert4y = yy - ( math.cos(45) * ray * thInd )
+    local vert4x = xx + ( math.cos(math.pi/4) * smRay )
+    local vert4y = yy + ( math.cos(math.pi/4) * smRay )
     local vert5x = xx
     local vert5y = yy - ray
-    local vert6x = xx - ( math.cos(45) * ray * thInd )
-    local vert6y = yy - ( math.cos(45) * ray * thInd )
+    local vert6x = xx - ( math.cos(math.pi/4) * smRay )
+    local vert6y = yy + ( math.cos(math.pi/4) * smRay )
     local vert7x = xx - ray
     local vert7y = yy
-    local vert8x = xx - ( math.cos(45) * ray * thInd )
-    local vert8y = yy + ( math.cos(45) * ray * thInd )
+    local vert8x = xx - ( math.cos(math.pi/4) * smRay )
+    local vert8y = yy - ( math.cos(math.pi/4) * smRay )
     
     local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y, vert6x, vert6y, vert7x, vert7y, vert8x, vert8y }
+    
+    local shapes = display.newPolygon( xx, yy, vertices )
+    
+    return shape
+end
+
+shapes.stars.five = function( xx, yy, ray, thick )
+    
+    local thInd = thick / 10
+	local smRay = ray * thInd
+    
+    local vert1x = xx
+    local vert1y = yy - ray
+    local vert2x = xx + smRay * math.sin(math.pi/5)
+    local vert2y = yy - smRay * math.cos(math.pi/5)
+    local vert3x = xx + ray * math.cos(math.pi/10)
+    local vert3y = yy - ray * math.sin(math.pi/10)
+    local vert4x = xx + smRay * math.cos(math.pi/10)
+    local vert4y = yy + smRay * math.sin(math.pi/10)
+    local vert5x = xx + ray * math.sin(math.pi/5)
+    local vert5y = yy + ray * math.cos(math.pi/5)
+    local vert6x = xx
+    local vert6y = yy + smRay
+    local vert7x = xx - ray * math.sin(math.pi/5)
+    local vert7y = yy + ray * math.cos(math.pi/5)
+    local vert8x = xx - smRay * math.cos(math.pi/10)
+    local vert8y = yy + smRay * math.sin(math.pi/10)
+	local vert9x = xx - ray * math.cos(math.pi/10)
+	local vert9y = yy - ray * math.sin(math.pi/10)
+	local vert10x = xx - smRay * math.sin(math.pi/5)
+	local vert10y = yy - smRay * math.cos(math.pi/5)
+    
+    local vertices = { vert1x, vert1y, vert2x, vert2y, vert3x, vert3y, vert4x, vert4y, vert5x, vert5y, vert6x, vert6y, vert7x, vert7y, vert8x, vert8y, vert9x, vert9y, vert10x, vert10y }
     
     local shapes = display.newPolygon( xx, yy, vertices )
     
