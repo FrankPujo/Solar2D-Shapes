@@ -30,6 +30,7 @@ Shapes
   |——— stars
   |      |
   |      |——— four
+  |      |——— five
   |
   |——— arrows
   |      |
@@ -60,10 +61,11 @@ In this list we will point out every possible argument to every function.
 * height lenhgt
 ### Star
 * ray lenght
-* thickness index[^1]
+* thickness index (four points[^1], five points[^3])
 ### Ellipse
 * width[^2]
 * height[^2]
 ---
-  [^1]: The thickness index is expressed with a number from 0 to 10; with 0 causing the absence of the star itself and 10 the creation of a square instead. To create a classic looking star a value from 1 to 6 is suggested.  
+  [^1]: For four-points stars: the thickness index is expressed with a number from 0 to 10; with 0 causing the absence of the star itself and 10 the creation of a square instead. To create a classic looking star a value from 1 to 6 is suggested.  
   [^2]: The values in the ellipse can be express with any number. Consider that a value of 1 corresponds to 100 pixels on the screen.
+  [^3]: For five-points stars: the thickness index is expressed with a number from 0 to 10; with 0 causing the absence of the star itself and 10 the creation of a decagon instead. To create a classic looking star a value from 3 to 5 is suggested., with 3.6 as the ideal and standard value.  
